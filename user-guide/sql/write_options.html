@@ -22,7 +22,7 @@
       
   
     
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/pydata-sphinx-theme.css?v=1140d252" />
     <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=c6d785ac" />
     
@@ -598,11 +598,11 @@
 <span class="w">  </span><span class="n">my_table</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="nb">bigint</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="nb">bigint</span><span class="p">)</span>
 <span class="w">  </span><span class="n">STORED</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">csv</span>
 <span class="w">  </span><span class="n">COMPRESSION</span><span class="w"> </span><span class="k">TYPE</span><span class="w"> </span><span class="n">gzip</span>
-<span class="w">  </span><span class="k">DELIMITER</span><span class="w"> </span><span class="s1">&#39;;&#39;</span>
 <span class="w">  </span><span class="k">LOCATION</span><span class="w"> </span><span class="s1">&#39;/test/location/my_csv_table/&#39;</span>
 <span class="w">  </span><span class="k">OPTIONS</span><span class="p">(</span>
 <span class="w">    </span><span class="n">NULL_VALUE</span><span class="w"> </span><span class="s1">&#39;NAN&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="s1">&#39;has_header&#39;</span><span class="w"> </span><span class="s1">&#39;true&#39;</span>
+<span class="w">    </span><span class="s1">&#39;has_header&#39;</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;format.delimiter&#39;</span><span class="w"> </span><span class="s1">&#39;;&#39;</span>
 <span class="w">  </span><span class="p">)</span>
 </pre></div>
 </div>
