@@ -300,7 +300,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../contributor-guide/index.html">Introduction</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/communication.html">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/communication.html">Community Communication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributor-guide/development_environment.html">Development Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributor-guide/architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributor-guide/testing.html">Testing</a></li>
@@ -572,7 +572,7 @@ example, to configure <code class="docutils literal notranslate"><span class="pr
 </tr>
 <tr class="row-odd"><td><p>datafusion.execution.parquet.compression</p></td>
 <td><p>zstd(3)</p></td>
-<td><p>(writing) Sets default parquet compression codec. Valid values are: uncompressed, snappy, gzip(level), lzo, brotli(level), lz4, zstd(level), and lz4_raw. These values are not case sensitive. If NULL, uses default parquet writer setting Note that this default setting is not the same as the default parquet writer setting.</p></td>
+<td><p>(writing) Sets default parquet compression codec. Valid values are: uncompressed, snappy, gzip(level), brotli(level), lz4, zstd(level), and lz4_raw. These values are not case sensitive. If NULL, uses default parquet writer setting Note that this default setting is not the same as the default parquet writer setting.</p></td>
 </tr>
 <tr class="row-even"><td><p>datafusion.execution.parquet.dictionary_enabled</p></td>
 <td><p>true</p></td>
@@ -591,7 +591,7 @@ example, to configure <code class="docutils literal notranslate"><span class="pr
 <td><p>(writing) Target maximum number of rows in each row group (defaults to 1M rows). Writing larger row groups requires more memory to write, but can get better compression and be faster to read.</p></td>
 </tr>
 <tr class="row-even"><td><p>datafusion.execution.parquet.created_by</p></td>
-<td><p>datafusion version 51.0.0</p></td>
+<td><p>datafusion version 52.0.0</p></td>
 <td><p>(writing) Sets “created by” property</p></td>
 </tr>
 <tr class="row-odd"><td><p>datafusion.execution.parquet.column_index_truncate_length</p></td>
