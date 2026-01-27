@@ -43,6 +43,7 @@
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user-guide/sql/scalar_functions';</script>
+    <link rel="icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Special Functions" href="special_functions.html" />
@@ -2655,7 +2656,7 @@ If count is negative, everything to the right of the final delimiter (counting f
 <h4>Arguments<a class="headerlink" href="#id159" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>expression</strong>: Expression containing string or binary data</p></li>
-<li><p><strong>format</strong>: Supported formats are: <code class="docutils literal notranslate"><span class="pre">base64</span></code>, <code class="docutils literal notranslate"><span class="pre">hex</span></code></p></li>
+<li><p><strong>format</strong>: Supported formats are: <code class="docutils literal notranslate"><span class="pre">base64</span></code>, <code class="docutils literal notranslate"><span class="pre">base64pad</span></code>, <code class="docutils literal notranslate"><span class="pre">hex</span></code></p></li>
 </ul>
 <p><strong>Related functions</strong>:</p>
 <ul class="simple">
@@ -3387,7 +3388,8 @@ an error will be returned.</p></li>
 <h3><code class="docutils literal notranslate"><span class="pre">to_timestamp</span></code><a class="headerlink" href="#to-timestamp" title="Link to this heading">#</a></h3>
 <p>Converts a value to a timestamp (<code class="docutils literal notranslate"><span class="pre">YYYY-MM-DDT00:00:00.000000&lt;TZ&gt;</span></code>) in the session time zone. Supports strings,
 integer, unsigned integer, and double types as input. Strings are parsed as RFC3339 (e.g. ‘2023-07-20T05:44:00’)
-if no [Chrono formats] are provided. Strings that parse without a time zone are treated as if they are in the
+if no <a class="reference external" href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">Chrono formats</a> are provided.
+Strings that parse without a time zone are treated as if they are in the
 session time zone, or UTC if no session time zone is set.
 Integers, unsigned integers, and doubles are interpreted as seconds since the unix epoch (<code class="docutils literal notranslate"><span class="pre">1970-01-01T00:00:00Z</span></code>).</p>
 <p>Note: <code class="docutils literal notranslate"><span class="pre">to_timestamp</span></code> returns <code class="docutils literal notranslate"><span class="pre">Timestamp(ns,</span> <span class="pre">TimeZone)</span></code> where the time zone is the session time zone. The supported range
@@ -3433,7 +3435,8 @@ only supported at the end of the string preceded by a space.</p></li>
 <h3><code class="docutils literal notranslate"><span class="pre">to_timestamp_micros</span></code><a class="headerlink" href="#to-timestamp-micros" title="Link to this heading">#</a></h3>
 <p>Converts a value to a timestamp (<code class="docutils literal notranslate"><span class="pre">YYYY-MM-DDT00:00:00.000000&lt;TZ&gt;</span></code>) in the session time zone. Supports strings,
 integer, unsigned integer, and double types as input. Strings are parsed as RFC3339 (e.g. ‘2023-07-20T05:44:00’)
-if no [Chrono formats] are provided. Strings that parse without a time zone are treated as if they are in the
+if no <a class="reference external" href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">Chrono formats</a> are provided.
+Strings that parse without a time zone are treated as if they are in the
 session time zone, or UTC if no session time zone is set.
 Integers, unsigned integers, and doubles are interpreted as microseconds since the unix epoch (<code class="docutils literal notranslate"><span class="pre">1970-01-01T00:00:00Z</span></code>).</p>
 <p>The session time zone can be set using the statement <code class="docutils literal notranslate"><span class="pre">SET</span> <span class="pre">TIMEZONE</span> <span class="pre">=</span> <span class="pre">'desired</span> <span class="pre">time</span> <span class="pre">zone'</span></code>.
@@ -3475,7 +3478,8 @@ only supported at the end of the string preceded by a space.</p></li>
 <h3><code class="docutils literal notranslate"><span class="pre">to_timestamp_millis</span></code><a class="headerlink" href="#to-timestamp-millis" title="Link to this heading">#</a></h3>
 <p>Converts a value to a timestamp (<code class="docutils literal notranslate"><span class="pre">YYYY-MM-DDT00:00:00.000&lt;TZ&gt;</span></code>) in the session time zone. Supports strings,
 integer, unsigned integer, and double types as input. Strings are parsed as RFC3339 (e.g. ‘2023-07-20T05:44:00’)
-if no [Chrono formats] are provided. Strings that parse without a time zone are treated as if they are in the
+if no <a class="reference external" href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">Chrono formats</a> are provided.
+Strings that parse without a time zone are treated as if they are in the
 session time zone, or UTC if no session time zone is set.
 Integers, unsigned integers, and doubles are interpreted as milliseconds since the unix epoch (<code class="docutils literal notranslate"><span class="pre">1970-01-01T00:00:00Z</span></code>).</p>
 <p>The session time zone can be set using the statement <code class="docutils literal notranslate"><span class="pre">SET</span> <span class="pre">TIMEZONE</span> <span class="pre">=</span> <span class="pre">'desired</span> <span class="pre">time</span> <span class="pre">zone'</span></code>.
@@ -3517,7 +3521,8 @@ only supported at the end of the string preceded by a space.</p></li>
 <h3><code class="docutils literal notranslate"><span class="pre">to_timestamp_nanos</span></code><a class="headerlink" href="#to-timestamp-nanos" title="Link to this heading">#</a></h3>
 <p>Converts a value to a timestamp (<code class="docutils literal notranslate"><span class="pre">YYYY-MM-DDT00:00:00.000000000&lt;TZ&gt;</span></code>) in the session time zone. Supports strings,
 integer, unsigned integer, and double types as input. Strings are parsed as RFC3339 (e.g. ‘2023-07-20T05:44:00’)
-if no [Chrono formats] are provided. Strings that parse without a time zone are treated as if they are in the
+if no <a class="reference external" href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">Chrono formats</a> are provided.
+Strings that parse without a time zone are treated as if they are in the
 session time zone. Integers, unsigned integers, and doubles are interpreted as nanoseconds since the unix epoch (<code class="docutils literal notranslate"><span class="pre">1970-01-01T00:00:00Z</span></code>).</p>
 <p>The session time zone can be set using the statement <code class="docutils literal notranslate"><span class="pre">SET</span> <span class="pre">TIMEZONE</span> <span class="pre">=</span> <span class="pre">'desired</span> <span class="pre">time</span> <span class="pre">zone'</span></code>.
 The time zone can be a value like +00:00, ‘Europe/London’ etc.</p>
@@ -3558,7 +3563,8 @@ only supported at the end of the string preceded by a space.</p></li>
 <h3><code class="docutils literal notranslate"><span class="pre">to_timestamp_seconds</span></code><a class="headerlink" href="#to-timestamp-seconds" title="Link to this heading">#</a></h3>
 <p>Converts a value to a timestamp (<code class="docutils literal notranslate"><span class="pre">YYYY-MM-DDT00:00:00&lt;TZ&gt;</span></code>) in the session time zone. Supports strings,
 integer, unsigned integer, and double types as input. Strings are parsed as RFC3339 (e.g. ‘2023-07-20T05:44:00’)
-if no [Chrono formats] are provided. Strings that parse without a time zone are treated as if they are in the
+if no <a class="reference external" href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">Chrono formats</a> are provided.
+Strings that parse without a time zone are treated as if they are in the
 session time zone, or UTC if no session time zone is set.
 Integers, unsigned integers, and doubles are interpreted as seconds since the unix epoch (<code class="docutils literal notranslate"><span class="pre">1970-01-01T00:00:00Z</span></code>).</p>
 <p>The session time zone can be set using the statement <code class="docutils literal notranslate"><span class="pre">SET</span> <span class="pre">TIMEZONE</span> <span class="pre">=</span> <span class="pre">'desired</span> <span class="pre">time</span> <span class="pre">zone'</span></code>.
@@ -3598,7 +3604,11 @@ only supported at the end of the string preceded by a space.</p></li>
 </section>
 <section id="to-unixtime">
 <h3><code class="docutils literal notranslate"><span class="pre">to_unixtime</span></code><a class="headerlink" href="#to-unixtime" title="Link to this heading">#</a></h3>
-<p>Converts a value to seconds since the unix epoch (<code class="docutils literal notranslate"><span class="pre">1970-01-01T00:00:00</span></code>). Supports strings, dates, timestamps, integer, unsigned integer, and float types as input. Strings are parsed as RFC3339 (e.g. ‘2023-07-20T05:44:00’) if no <a class="reference external" href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">Chrono formats</a> are provided. Integers, unsigned integers, and floats are interpreted as seconds since the unix epoch (<code class="docutils literal notranslate"><span class="pre">1970-01-01T00:00:00</span></code>).</p>
+<p>Converts a value to seconds since the unix epoch (<code class="docutils literal notranslate"><span class="pre">1970-01-01T00:00:00</span></code>).
+Supports strings, dates, timestamps, integer, unsigned integer, and float types as input.
+Strings are parsed as RFC3339 (e.g. ‘2023-07-20T05:44:00’)
+if no <a class="reference external" href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">Chrono formats</a> are provided.
+Integers, unsigned integers, and floats are interpreted as seconds since the unix epoch (<code class="docutils literal notranslate"><span class="pre">1970-01-01T00:00:00</span></code>).</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">to_unixtime</span><span class="p">(</span><span class="n">expression</span><span class="p">[,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">format_n</span><span class="p">])</span>
 </pre></div>
 </div>
